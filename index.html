@@ -16,7 +16,12 @@
 
 <body>
     <div class="main">
-        <img class="imgClassical" src="./img/reggae-img.jpg" alt="classical-img">
+        <div class="navbar">
+            <i class="logo">Clonify</i>
+            <i class="fas fa-list-ul button-trackList"></i>
+            <i class="fas fa-arrow-left button-return invisible"></i>
+        </div>
+        <img class="track-img" src="./img/reggae-img.jpg" alt="track-img">
         <div class="description">
             <h2>Nome da música</h2>
             <i>Nome do artista</i>
@@ -37,7 +42,54 @@
             <i class="fas fa-pause button-pause invisible"></i>
             <i class="fas fa-forward button-arrows next"></i>
         </div>
-        <audio src="./audio/reggae.mp3"></audio>
+        <audio src=""></audio>
+    </div>
+    
+    <div class="modal invisible">
+        <ul>
+            <li class="trackList-element">
+                <img class="list-img" src="./img/classical-img.jpg" alt="">
+                <p class="list-name"></p>
+                <p>&nbsp;-&nbsp;</p>
+                <small class="list-artist">Classical Dude</small>
+            </li>
+            <li class="trackList-element">
+                <img class="list-img" src="./img//country-img.jpg" alt="">
+                <p class="list-name">The Worthy Roads</p>
+                <p>&nbsp;-&nbsp;</p>
+                <small class="list-artist">Country Club Outlaws</small>
+            </li>
+            <li class="trackList-element">
+                <img class="list-img" src="./img/edm-img.jpg" alt="">
+                <p class="list-name">Just vibing, nope</p>
+                <p>&nbsp;-&nbsp;</p>
+                <small class="list-artist">TechFreak</small>
+            </li>
+            <li class="trackList-element">
+                <img class="list-img" src="./img/hiphop-img.jpg" alt="">
+                <p class="list-name">Pinpoint Sessions</p>
+                <p>&nbsp;-&nbsp;</p>
+                <small class="list-artist">Da Hood</small>
+            </li>
+            <li class="trackList-element">
+                <img class="list-img" src="./img/metal-img.jpg" alt="">
+                <p class="list-name">Ephemeral Claim</p>
+                <p>&nbsp;-&nbsp;</p>
+                <small class="list-artist">80s Most Wanted</small>
+            </li>
+            <li class="trackList-element">
+                <img class="list-img" src="./img/reggae-img.jpg" alt="">
+                <p class="list-name">Good Vibes Jam</p>
+                <p>&nbsp;-&nbsp;</p>
+                <small class="list-artist">Roots Run Deep</small>
+            </li>
+            <li class="trackList-element">
+                <img class="list-img" src="./img/rock-img.jpg" alt="">
+                <p class="list-name">Space Rock</p>
+                <p>&nbsp;-&nbsp;</p>
+                <small class="list-artist">The Dellarians</small>
+            </li>
+        </ul>
     </div>
 
     <script src="./script.js"></script>

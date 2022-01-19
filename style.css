@@ -1,9 +1,12 @@
 /* Variáveis */
 :root{
  --black: #000;
- --gray: #333;
- --light-gray: #ddd;
+ --dark-gray: #333;
+ --gray: #555;
+ --light-gray: #888;
+ --lightest-gray: #ddd;
  --white-gray: #eee;
+ --dark-green: #1d4d2f;
 
 }
 
@@ -27,7 +30,7 @@ body, html{/*inserir googlefonts aqui*/
 }
 
 /* img */
-img {
+.track-img {
     width: 300px;
     height: 300px;
 }
@@ -36,12 +39,37 @@ img {
 .main{
     width: 350px;
     height: 90vh;
-    background-color: var(--gray);
+    background-color: var(--dark-gray);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
+}
+.navbar{
+    background-color: var(--dark-green);
+    width: 348px;
+    height: 60px;
+    font-size: 30px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    position: fixed;
+    top: 5vh;  
+    border-radius: 10px;
+}
+.logo{
+    font-size: 30px;
+    margin-left: 25px;
+}
+.button-trackList{
+    margin-right: 25px;
+    cursor: pointer;
+}
+.button-return{
+    margin-right: 25px;
+    cursor: pointer;
 }
 .description{
     width: 300px;
@@ -96,4 +124,38 @@ progress{
 }
 .invisible {
     display: none !important;
+}
+
+
+/* Lista de músicas */
+.modal{
+    position: fixed;
+    bottom: 5vh;
+    width: 350px;
+    height: calc(90vh - 60px);
+    background-color: var(--gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    
+}
+.modal ul li{
+    background-color: var(--light-gray);
+    width: 350px;
+    height: 10vh;
+    margin: 7px 0 7px 0;
+    
+    display: flex;
+    align-items: center;    
+    border-radius: 1px;
+}
+.modal ul li:hover{
+    background-color: var(--dark-green);
+    cursor: pointer;
+}
+.list-img{
+    width: 55px;
+    height: 55px;
 }

@@ -1,11 +1,12 @@
 //Constants, Variables, Arrays, Lists
 let music = document.querySelector('audio');
 let trackName = document.querySelector('.description h2');
-let artistName = document.querySelector('.description i');
-let trackImg = document.querySelector('img');
+let trackArtist = document.querySelector('.description i');
+let trackImg = document.querySelector('.track-img');
 let trackDuration = document.querySelector('.end');
 
 let trackIndex = 0;
+let = listIndex = 0;
 
 let trackList = [
     {
@@ -34,7 +35,7 @@ let trackList = [
     },
     {
         title: 'Ephemeral Claim',
-        artist: '80s most wanted',
+        artist: '80s Most Wanted',
         src: './audio/metal.wav',
         img: './img/metal-img.jpg'
     },
@@ -51,6 +52,15 @@ let trackList = [
         img: './img/rock-img.jpg'
     }
 ]
+
+let listElements = document.querySelectorAll('.trackList-element');
+let listImg = document.querySelector('.trackList-element list-img');
+let listName = document.querySelector('.trackList-element list-name');
+let listArtist = document.querySelector('.trackList-element list-artist');
+
+
+
+//=========================================================================================
 
 //Events
 document.querySelector('.button-play').addEventListener('click', playTrack);
@@ -81,6 +91,14 @@ document.querySelector('.next').addEventListener('click', () => {
     playTrack();
 });
 
+document.querySelector('.button-trackList').addEventListener('click', openModal);
+
+document.querySelector('.button-return').addEventListener('click', closeModal);
+
+
+
+//=========================================================================================
+
 //Functions
 function playTrack() {
     music.play();/* toca musica */
@@ -100,6 +118,7 @@ function updateDurationBar() {
     if (bar.style.width == '100%') {
         document.querySelector('.button-pause').classList.add('invisible');
         document.querySelector('.button-play').classList.remove('invisible');
+        
     }
 
     let currTime = document.querySelector('.start');
@@ -123,8 +142,29 @@ function renderTrack(index) {
     music.setAttribute('src', trackList[index].src);
     music.addEventListener('loadeddata', () => {
         trackName.textContent = trackList[index].title;
-        artistName.textContent = trackList[index].artist;
+        trackArtist.textContent = trackList[index].artist;
         trackImg.src = trackList[index].img;
         trackDuration.textContent = sectoMin(Math.floor(music.duration));
     });
+}
+
+/* ARRUMAR FUNCIONALIDADE */
+function renderList(){
+    listElements.forEach( listItem, index => {
+        document.querySelector('.list-img').setAttribute('src', trackList[index].img);
+        document.querySelector('.list-name').textContent = trackList[index].title;
+        listItem[index].listArtist.textContent = trackList[index].artist;
+    });
+}    
+function openModal(){
+    document.querySelector('.button-trackList').classList.add('invisible');
+    document.querySelector('.button-return').classList.remove('invisible');
+    document.querySelector('.modal').classList.remove('invisible');
+    renderList();
+}
+function closeModal(){
+    document.querySelector('.button-trackList').classList.remove('invisible');
+    document.querySelector('.button-return').classList.add('invisible');
+    document.querySelector('.modal').classList.add('invisible');
+
 }
